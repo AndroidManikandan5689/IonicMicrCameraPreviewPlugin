@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-raqmiyat-micrcameraview" version="1.0.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>MicrCameraPrview</name>
+    <js-module name="MicrCameraPrview" src="www/micrcamerapreview.js">
+        <clobbers target="MicrCameraPrview" />
+    </js-module>
+    <platform name="android">
+        <preference name="ANDROID_SUPPORT_V4_VERSION" default="28.+"/>
+        <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
+		<framework src="library" custom="true"/>
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="MicrCameraPrview">
+                <param name="android-package" value="cordova.plugin.raqmiyat.micrcamerapreview.MicrCameraPrview" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:label="CameraViewActivity" android:name="cordova.plugin.raqmiyat.micrcamerapreview.CameraViewActivity" android:screenOrientation="landscape"></activity>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="res/drawable/cancel.png" target-dir="res/drawable" />
+        <source-file src="res/drawable/tick.png" target-dir="res/drawable" />
+        <source-file src="res/layout/activity_camera.xml" target-dir="res/layout" />
+        <source-file src="src/android/MicrCameraPrview.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+        <source-file src="src/android/CameraViewActivity.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+        <source-file src="src/android/LeadPoint.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+        <source-file src="src/android/LeadRect.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+        <source-file src="src/android/LeadSize.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+        <source-file src="src/android/OverlayView.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+        <source-file src="src/android/RasterYUVFormat.java" target-dir="src/cordova/plugin/raqmiyat/micrcamerapreview" />
+    </platform>
+</plugin>
