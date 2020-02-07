@@ -9,7 +9,7 @@ description: Cordova plugin for scan cheque micr code using camera preview with 
 
 ## Installation
     ionic cordova plugin add cordova-plugin-raqmiyat-micrcamerapreview (or)
-    ionic cordova plugin add https://github.com/GMuthuraja/IonicMicrCameraPreviewPlugin.git
+    ionic cordova plugin add https://github.com/AndroidManikandan5689/IonicMicrCameraPreviewPlugin.git
 
 ## Supported Platforms
 - Android
